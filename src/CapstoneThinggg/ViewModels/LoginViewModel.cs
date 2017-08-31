@@ -1,5 +1,5 @@
 ﻿
-namespace CapstoneThinggg.ViewModels
+namespace Forum.ViewModels
 {
     public class LoginViewModel
     {

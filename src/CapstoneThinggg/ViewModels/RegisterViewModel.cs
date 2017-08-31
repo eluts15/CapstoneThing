@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CapstoneThinggg.ViewModels
+namespace Forum.ViewModels
 {
     public class RegisterViewModel
     {
