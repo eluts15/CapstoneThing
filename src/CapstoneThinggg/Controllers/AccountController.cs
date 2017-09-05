@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Forum.ViewModels;
 using System.Linq;
 
-namespace CapstoneThinggg.Controllers
+namespace Forum.Controllers
 {
     public class AccountController : Controller
     {
@@ -29,7 +29,9 @@ namespace CapstoneThinggg.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 var user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                ChatRoom chatroom = new ChatRoom();
                 return View(user);
+
             }
             else
             {

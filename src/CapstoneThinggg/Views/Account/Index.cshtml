@@ -1,19 +1,39 @@
 ﻿@using System.Security.Claims
 @using Forum.ViewModels
+@using Forum.Models
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*User views the page, has the option of navigating to a page*@
-<style>
+@*User views the page, has the option of navigating to a page
+    
+##Write up
+    A message between two people is can be a one to one relationship.
+    A chat room between multiple people: implement ajax to update a page showing the users message to everyone currently in the chat room.
+    Ultimately, this is live updating chatroom where users can post questions/implentation details and what not.
 
-</style>
+    
+*@
+
 <div class="signin center-panel">
 
     @if (User.Identity.IsAuthenticated)
     {
-        <h4>Hello @User.Identity.Name!</h4> 
+        <br />
+        <h6>@Html.ActionLink("Sign Out", "LogOff"), @User.Identity.Name</h6><!--Right align this.-->
+        <h6>@Html.ActionLink("Sign Out", "LogOff"), @User.Identity.Name</h6><!--Right align this.-->
+        <br />
+ 
+        <div><!--This as well, hide borders, -->
+            <ul class="collection">
+                <!--Signed in User can see recieved messages.-->
+                <li class="collection-item dismissable"><div>!Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>Bob<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>!Bob<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+            </ul>
+        </div>
 
     }
     else
